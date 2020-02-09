@@ -13,23 +13,18 @@ class ReverseImage(commands.Cog):
     async def revimg(self, ctx, url=None):
         """
         Reverse image search!
-        usage:  [p]revimg <image-link>
+        usage:  [p]revimg <image-link> or file upload
         """
-
-        sauce = f'https://saucenao.com/search.php?url={url}'
-        google = f'https://www.google.com/searchbyimage?&image_url={url}'
-        tineye = f'https://www.tineye.com/search?url={url}'
-        iqbd = f'https://iqdb.org/?url={url}'
-        yandex = f'https://yandex.com/images/search?url={url}&rpt=imageview'
-        embed = discord.Embed(title='Reverse Image Details', color=16776960)
+        if url is not None:
+            await ctx.message.delete()
         if url is None:
-            return await ctx.send(info("I need a image URL to search for!"))
-        await ctx.message.delete()
-        embed.add_field(name="Sauce", value=f'[Sauce Image Results]({sauce})', inline=False)
-        embed.add_field(name="Google", value=f'[Google Image Results]({google})', inline=False)
-        embed.add_field(name="TinEye", value=f'[Tineye Image Results]({tineye})', inline=False)
-        embed.add_field(name="IQBD", value=f'[IQBD Image Results]({iqbd})', inline=False)
-        embed.add_field(name="Yandex", value=f'[Yandex Image Results]({yandex})', inline=False)
+            url = ctx.message.attachments[0].url
+        embed = discord.Embed(title='Reverse Image Details', color=16776960)
+        embed.add_field(name="Sauce", value=f'[Sauce Image Results](https://saucenao.com/search.php?url={url})', inline=True)
+        embed.add_field(name="Google", value=f'[Google Image Results](https://www.google.com/searchbyimage?&image_url={url})', inline=True)
+        embed.add_field(name="TinEye", value=f'[Tineye Image Results](https://www.tineye.com/search?url={url})', inline=True)
+        embed.add_field(name="IQBD", value=f'[IQBD Image Results](https://iqdb.org/?url={url})', inline=True)
+        embed.add_field(name="Yandex", value=f'[Yandex Image Results](https://yandex.com/images/search?url={url}&rpt=imageview)', inline=True)
         await ctx.send(embed=embed)
 
     @staticmethod
