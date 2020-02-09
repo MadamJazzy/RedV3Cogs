@@ -7,6 +7,8 @@ __version__ = "1.0.0"
 
 class ReverseImage(commands.Cog):
     """Lookup an image on several common reverse search services!"""
+    def __init__(self, bot):
+        self.bot = bot
     @commands.command()
     async def revimg(self, ctx, url=None):
         """
