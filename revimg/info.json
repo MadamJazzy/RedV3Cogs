@@ -1,0 +1,15 @@
+{
+    "name": "BanCheck",
+    "author": [
+        "MadamJazzy (Sapphire#0419)"
+    ],
+    "short": "Reverse Image Search cog",
+    "description": "This cog automatically checks several common reverse image services for results",
+    "install_msg": "Thanks for installing revimg!",
+    "tags": [
+        "reverse",
+        "image",
+		"search",
+        "utility"
+    ]
+}
