@@ -12,8 +12,8 @@ class Social(commands.Cog):
 
     def embed_maker(self, ctx, action, user, sender, ):
         d = datapath(self)
-        f = d('social.yaml')
-        data = yaml.safe_load(f)
+        with open(d / 'social.yaml') as f:
+            data = yaml.safe_load(f)
         if user == sender:
             msg = data[action]['selfmsg']
         else:
