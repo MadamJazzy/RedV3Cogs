@@ -153,7 +153,7 @@ class Social(commands.Cog):
                 "shake", "shoot", "twerk", "strip", "thirsty", "moist", "whip", "facepalm", "ohno", "hungry", "nuts",
                 "fever", "socialcmds"]
         for x in list:
-            embed.add_field(name=x, value=f"{x} someone! [p]{x} @username", inline=True)
+            embed.add_field(name=x)
         await ctx.send(embed=embed)
 
 
