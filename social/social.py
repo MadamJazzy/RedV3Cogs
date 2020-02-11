@@ -10,7 +10,7 @@ class Social(commands.Cog):
         self.bot = bot
 
     def embed_maker(self, ctx, action, user, sender, ):
-        with open("social.yaml", 'r') as f:
+        with open("/social.yaml", 'r') as f:
             data = yaml.safe_load(f)
         if user == sender:
             msg = data[action]['selfmsg']
