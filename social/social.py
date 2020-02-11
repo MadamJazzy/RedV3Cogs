@@ -143,7 +143,10 @@ class Social(commands.Cog):
     async def fever(self, ctx, action="fever"):
         """Do you have the Fever?"""
         user = ctx.message.author
-        await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
+        try:
+            await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
+        except KeyError:
+            await ctx.send("Looks like you included a user! This command doesn't need that. Just use `fever` by itself.")
 
     @commands.command(pass_context=True, invoke_without_command=True)
     async def socialcmds(self, ctx):
