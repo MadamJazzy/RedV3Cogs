@@ -1,6 +1,6 @@
 import discord
 from redbot.core import commands
-from pathlib import Path
+from redbot.core.data_manager import cog_data_path as datapath
 import random
 import yaml
 
@@ -11,7 +11,7 @@ class Social(commands.Cog):
         self.bot = bot
 
     def embed_maker(self, ctx, action, user, sender, ):
-        d = redbot.core.data_manager.cog_data_path(self)
+        d = datapath(self)
         f = d('social.yaml')
         data = yaml.safe_load(f)
         if user == sender:
