@@ -146,11 +146,15 @@ class Social(commands.Cog):
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def socialcmds(self):
+    async def socialcmds(self, ctx):
         """List all Social Commands"""
-        await self.bot.say("```Social Commands\n"
-                           "kiss, bite, slap, taunt, cuddle, hugs, feed, spank, tease, hi5, shoot, lick, shake, shoot, "
-                           "twerk, strip, thirsty, moist, whip, facepalm, ohno, hungry, nuts, fever, socialcmds ```")
+        embed = discord.Embed(title="Social Commands!")
+        list = ["kiss", "bite", "slap", "taunt", "cuddle", "hugs", "feed", "spank", "tease", "hi5", "shoot", "lick",
+                "shake", "shoot", "twerk", "strip", "thirsty", "moist", "whip", "facepalm", "ohno", "hungry", "nuts",
+                "fever", "socialcmds"]
+        for x in list:
+            embed.add_field(name=x, value=f"{x} someone! [p]{x} @username")
+        await ctx.send(embed=embed)
 
 
 def setup(bot):
