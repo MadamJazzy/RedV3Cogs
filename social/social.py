@@ -3,8 +3,6 @@ from redbot.core import commands
 import random
 import yaml
 
-from discord.ext import commands
-
 
 class Social(commands.Cog):
 
