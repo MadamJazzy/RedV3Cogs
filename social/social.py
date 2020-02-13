@@ -10,7 +10,7 @@ class Social(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
-    def embed_maker(self, ctx, action, user, sender, ):
+    def embed_maker(self, ctx, action, user, sender):
         d = datapath(self)
         with open(d / 'social.yaml') as f:
             data = yaml.safe_load(f)
@@ -30,118 +30,141 @@ class Social(commands.Cog):
         return embed
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def kiss(self, ctx, *, user: discord.Member, action="kiss"):
+    async def kiss(self, ctx, *, user: discord.Member):
         """Kiss people!"""
+        action = "kiss"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def bite(self, ctx, *, user: discord.Member, action="bite"):
+    async def bite(self, ctx, *, user: discord.Member):
         """Bite people!"""
+        action = "bite"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def slap(self, ctx, *, user: discord.Member, action="slap"):
+    async def slap(self, ctx, *, user: discord.Member):
         """Slap people!"""
+        action = "slap"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def taunt(self, ctx, *, user: discord.Member, action="taunt"):
+    async def taunt(self, ctx, *, user: discord.Member):
         """Taunt people!"""
+        action = "taunt"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def cuddle(self, ctx, *, user: discord.Member, action="cuddle"):
+    async def cuddle(self, ctx, *, user: discord.Member):
         """Cuddle people!"""
+        action = "cuddle"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def hugs(self, ctx, *, user: discord.Member, action="hug"):
+    async def hugs(self, ctx, *, user: discord.Member):
         """Hug people!"""
+        action = "hug"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def feed(self, ctx, *, user: discord.Member, action="feed"):
+    async def feed(self, ctx, *, user: discord.Member):
         """Feed people!"""
+        action = "feed"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def spank(self, ctx, *, user: discord.Member, action="spank"):
+    async def spank(self, ctx, *, user: discord.Member):
         """Spank people!"""
+        action = "spank"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def tease(self, ctx, *, user: discord.Member, action="tease"):
+    async def tease(self, ctx, *, user: discord.Member):
         """Tease people!"""
+        action = "tease"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def hi5(self, ctx, *, user: discord.Member, action="hi5"):
+    async def hi5(self, ctx, *, user: discord.Member):
         """HighFive people!"""
+        action = "hi5"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def shoot(self, ctx, *, user: discord.Member, action="shoot"):
+    async def shoot(self, ctx, *, user: discord.Member):
         """Shoot people!"""
+        action = "shoot"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def lick(self, ctx, *, user: discord.Member, action="lick"):
+    async def lick(self, ctx, *, user: discord.Member):
         """Lick people!"""
+        action = "lick"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def shake(self, ctx, *, user: discord.Member, action="shake"):
+    async def shake(self, ctx, *, user: discord.Member):
         """Handshake!"""
+        action = "handshake"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def twerk(self, ctx, *, user: discord.Member, action="twerk"):
+    async def twerk(self, ctx, *, user: discord.Member):
         """TWERK!"""
+        action = "twerk"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def strip(self, ctx, *, user: discord.Member, action="strip"):
+    async def strip(self, ctx, *, user: discord.Member):
         """STRIP!"""
+        action = "strip"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def thirsty(self, ctx, *, user: discord.Member, action="thirsty"):
+    async def thirsty(self, ctx, *, user: discord.Member):
         """The Thirst is Real!"""
+        action = "thirsty"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def moist(self, ctx, *, user: discord.Member, action="moist"):
+    async def moist(self, ctx, *, user: discord.Member):
         """Moist lol!"""
+        action = "moist"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def whip(self, ctx, *, user: discord.Member, action="whip"):
+    async def whip(self, ctx, *, user: discord.Member):
         """Whip someone!"""
+        action = "whip"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def facepalm(self, ctx, *, user: discord.Member, action="facepalm"):
+    async def facepalm(self, ctx, *, user: discord.Member):
         """Facepalm images!"""
+        action = "facepalm"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def ohno(self, ctx, *, user: discord.Member, action="ono"):
+    async def ohno(self, ctx, *, user: discord.Member):
         """Oh no they didnt images!"""
+        action = "ono"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def hungry(self, ctx, *, user: discord.Member, action="hungry"):
+    async def hungry(self, ctx, *, user: discord.Member):
         """Hungry images!"""
+        action = "hungry"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def nuts(self, ctx, *, user: discord.Member, action="nuts"):
+    async def nuts(self, ctx, *, user: discord.Member):
         """NutCracker images!"""
+        action = "nuts"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
-    async def fever(self, ctx, action="fever"):
+    async def fever(self, ctx):
         """Do you have the Fever?"""
+        action = "fever"
         user = ctx.message.author
         try:
             await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
