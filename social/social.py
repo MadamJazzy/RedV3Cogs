@@ -25,7 +25,7 @@ class Social(commands.Cog):
             filetype = ".gif"
         baseurl = "http://cdn.hardinserver.com/social/"
         url = f'{baseurl}{action}/{action}{num}{filetype}'
-        embed = discord.Embed(title=msg.format(sender.name, user.name))
+        embed = discord.Embed(title=msg.format(sender, user))
         embed.set_image(url=url)
         return embed
 
@@ -68,7 +68,7 @@ class Social(commands.Cog):
     @commands.command(pass_context=True, invoke_without_command=True)
     async def feed(self, ctx, *, user: discord.Member):
         """Feed people!"""
-        action = "feed"
+        action = "feeds"
         await ctx.send(embed=self.embed_maker(ctx, action, user, sender=ctx.message.author))
 
     @commands.command(pass_context=True, invoke_without_command=True)
