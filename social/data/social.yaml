@@ -79,7 +79,7 @@ tease:
   selfmsg: "Looks like someone is lonely and could use a friend"
   num: 5
 thirsty:
-  msg: "{} tells {} to calm their thirsty self down{}!"
+  msg: "{} tells {} to calm their thirsty self down!"
   selfmsg: "Looks like someone is lonely and could use a friend"
   num: 5
 twerk:
