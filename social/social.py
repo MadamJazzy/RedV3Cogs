@@ -12,6 +12,7 @@ class Social(commands.Cog):
 
     def embed_maker(self, ctx, action, user, sender):
         d = datapath(self)
+        embed = discord.Embed()
         with open(d / 'social.yaml') as f:
             data = yaml.safe_load(f)
         if user == sender:
@@ -25,8 +26,9 @@ class Social(commands.Cog):
             filetype = ".gif"
         baseurl = "http://cdn.hardinserver.com/social/"
         url = f'{baseurl}{action}/{action}{num}{filetype}'
-        embed = discord.Embed(title=msg.format(sender, user))
-        embed.set_image(url=url)
+        embed.title = msg.format(sender, user)
+        if user != sender:
+            embed.set_image(url=url)
         return embed
 
     @commands.command(pass_context=True, invoke_without_command=True)
