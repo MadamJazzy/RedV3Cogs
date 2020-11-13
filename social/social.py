@@ -21,10 +21,10 @@ class Social(commands.Cog):
             msg = data[action]['msg']
         num = random.randint(1, int(data[action]['num']))
         if action == "fever":
-            url = f'https://hardinserver.com/social/{action}/{action}{num}.jpg'
+            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.jpg'
         else:
-            url = f'https://hardinserver.com/social/{action}/{action}{num}.gif'
-        baseurl = "http://hardinserver.com/social/"
+            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
+#        baseurl = "http://hardinserver.com/social/"
 #        url = f'{baseurl}{action}/{action}{num}{filetype}'
         embed.title = msg.format(sender, user)
         if user != sender:
