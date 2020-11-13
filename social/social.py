@@ -24,7 +24,7 @@ class Social(commands.Cog):
             filetype = ".jpg"
         else:
             filetype = ".gif"
-        baseurl = "http://cdn.hardinserver.com/social/"
+        baseurl = "https://hardinserver.com/social/"
         url = f'{baseurl}{action}/{action}{num}{filetype}'
         embed.title = msg.format(sender, user)
         if user != sender:
