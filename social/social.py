@@ -21,9 +21,9 @@ class Social(commands.Cog):
             msg = data[action]['msg']
         num = random.randint(1, int(data[action]['num']))
         if action == "fever":
-            filetype = ".jpg"
+            filetype == ".jpg"
         else:
-            filetype = ".gif"
+            filetype == ".gif"
         baseurl = "http://hardinserver.com/social/"
         url = f'{baseurl}{action}/{action}{num}{filetype}'
         embed.title = msg.format(sender, user)
