@@ -20,14 +20,17 @@ class Social(commands.Cog):
         else:
             msg = data[action]['msg']
         num = random.randint(1, int(data[action]['num']))
-        if action == "fever":
-            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.jpg'
-        else:
-            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
+#        if action != "fever":
+#            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
+#        else:
+#            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.jpg'
+        url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
 #        baseurl = "http://hardinserver.com/social/"
 #        url = f'{baseurl}{action}/{action}{num}{filetype}'
         embed.title = msg.format(sender, user)
         if user != sender:
+            embed.set_image(url=url)
+        if user == sender and action == "fever":
             embed.set_image(url=url)
         return embed
 
