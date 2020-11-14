@@ -24,7 +24,7 @@ class Social(commands.Cog):
 #            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
 #        else:
 #            url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.jpg'
-        url = f'http://jleehardin.gyges.feralhosting.com/social/{action}/{action}{num}.gif'
+        url = f'http://hardinserver.com/social/{action}/{action}{num}.gif'
 #        baseurl = "http://hardinserver.com/social/"
 #        url = f'{baseurl}{action}/{action}{num}{filetype}'
         embed.title = msg.format(sender, user)
