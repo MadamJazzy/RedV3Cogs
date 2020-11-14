@@ -15,18 +15,20 @@ class ReverseImage(commands.Cog):
         Reverse image search!
         usage:  [p]revimg <image-link> or file upload
         """
-        if url is not None:
-            await ctx.message.delete()
-        if url is None:
-            url = ctx.message.attachments[0].url
-        embed = discord.Embed(title='Reverse Image Details', color=16776960)
-        embed.add_field(name="Sauce", value=f'[Sauce Image Results](https://saucenao.com/search.php?url={url})', inline=True)
-        embed.add_field(name="Google", value=f'[Google Image Results](https://www.google.com/searchbyimage?&image_url={url})', inline=True)
-        embed.add_field(name="TinEye", value=f'[Tineye Image Results](https://www.tineye.com/search?url={url})', inline=True)
-        embed.add_field(name="IQBD", value=f'[IQBD Image Results](https://iqdb.org/?url={url})', inline=True)
-        embed.add_field(name="Yandex", value=f'[Yandex Image Results](https://yandex.com/images/search?url={url}&rpt=imageview)', inline=True)
-        await ctx.send(embed=embed)
-
+        try:
+            if url is not None:
+                await ctx.message.delete()
+            if url is None:
+                url = ctx.message.attachments[0].url
+            embed = discord.Embed(title='Reverse Image Details', color=16776960)
+            embed.add_field(name="Sauce", value=f'[Sauce Image Results](https://saucenao.com/search.php?url={url})', inline=True)
+            embed.add_field(name="Google", value=f'[Google Image Results](https://www.google.com/searchbyimage?&image_url={url})', inline=True)
+            embed.add_field(name="TinEye", value=f'[Tineye Image Results](https://www.tineye.com/search?url={url})', inline=True)
+            embed.add_field(name="IQBD", value=f'[IQBD Image Results](https://iqdb.org/?url={url})', inline=True)
+            embed.add_field(name="Yandex", value=f'[Yandex Image Results](https://yandex.com/images/search?url={url}&rpt=imageview)', inline=True)
+            await ctx.send(embed=embed)
+        except:
+            await ctx.send("Ooops, Something went wrong. Most common cause of this error is failing to provide an upload or link")
     @staticmethod
     async def send_embed(ctx, embed):
         """Send an embed. If the bot can't send it, complains about permissions."""
